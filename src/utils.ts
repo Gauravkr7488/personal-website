@@ -1,7 +1,7 @@
 export class utils {
-    static createDiv(): HTMLDivElement {
+    static createDiv(text: string = "something"): HTMLDivElement {
         const div = document.createElement("div");
-        div.textContent = "I’m reusable!";
+        div.textContent = text;
         return div;
     }
     static addId(name: string, div: HTMLDivElement){

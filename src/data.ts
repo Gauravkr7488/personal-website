@@ -4,5 +4,6 @@ export class Data{
         c: "C", 
         cpp: "C++", 
         cSharp: "C#",
+        kotlin: "kotlin"
     }
 }

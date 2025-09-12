@@ -1,3 +1,4 @@
+import { Skills } from "./skills";
 import { utils } from "./utils";
 
 const root = utils.createDiv();
@@ -8,6 +9,8 @@ const skillContainer = utils.createDiv();
 utils.addId("skillContainer", skillContainer);
 utils.addClass("container", skillContainer);
 root.appendChild(skillContainer);
+Skills.addSkils(skillContainer);
+
 
 const projectContainer = utils.createDiv();
 utils.addId("projectContainer", projectContainer);
