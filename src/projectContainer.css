@@ -1,0 +1,53 @@
+/* Container for all project cards */
+#projectContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Project card */
+.projectCard {
+  background: #fff;
+  border: 1px solid #e5e7eb; /* subtle border */
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.projectCard:hover {
+  border-color: #3b82f6; /* soft highlight */
+  transform: translateY(-3px);
+}
+
+/* Project name */
+.projectName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #111827;
+  text-align: center;
+}
+
+/* Skill section */
+.skillSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+/* Skill tag */
+.skillTag {
+  background-color: #f9fafb;
+  color: #374151;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px; /* pill */
+  border: 1px solid #e5e7eb;
+  transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
+}
+
+.hide{
+  display: none;
+}

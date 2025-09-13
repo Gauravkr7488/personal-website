@@ -1,4 +1,5 @@
 import { Data } from "./data";
+import { Projects } from "./projects";
 import { utils } from "./utils";
 export class Skills {
     private static skills: string[] = Object.values(Data.skills);
@@ -16,10 +17,11 @@ export class Skills {
     }
 
     private static addClickingOnButtons() {
-        const skillButtons = document.querySelectorAll<HTMLSpanElement>(".skillButton");
+        const skillButtons = document.querySelectorAll(".skillButton");
         skillButtons.forEach((btn) => {
             btn.addEventListener("click", () => {
                 btn.classList.toggle("selectedSkill");
+                Projects.filterProjects();
             });
         });
     }

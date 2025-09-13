@@ -1,16 +1,41 @@
 import { Data } from "./data";
 import { utils } from "./utils";
 
-export class Projects{
+export class Projects {
+    static filterProjects() {
+        let selectedSkillsList: string[] = [];
+        const projectCards = document.querySelectorAll(".projectCard");
+
+        projectCards.forEach(projectCard => {
+            projectCard.classList.remove("hide");
+        });
+
+        const selectedSkills = document.querySelectorAll(".selectedSkill");
+        selectedSkills.forEach(selectedSkill => {
+            selectedSkillsList.push(selectedSkill.textContent);
+
+        });
+
+        let skillTagsList: string[] = [];
+        projectCards.forEach(projectCard => {
+            const skillTags = projectCard.querySelectorAll(".skillTag");
+            skillTags.forEach(skillTag => {
+                skillTagsList.push(skillTag.textContent);
+            });
+            if(!utils.isArrayASubsetOfB(skillTagsList, selectedSkillsList)) projectCard.classList.add("hide");
+            skillTagsList = [];
+        });
+    }
+
     private static projects = Object.values(Data.projects);
 
-    static addProjects(projectContainer: HTMLDivElement){
+    static addProjects(projectContainer: HTMLDivElement) {
         this.listProjects(projectContainer);
         // some functionality
     }
 
-    private static listProjects(projectContainer: HTMLDivElement){
-        this.projects.forEach(element =>{
+    private static listProjects(projectContainer: HTMLDivElement) {
+        this.projects.forEach(element => {
             const projectCard = utils.createDiv();
             utils.addClass("projectCard", projectCard);
             projectContainer.appendChild(projectCard);
@@ -18,7 +43,7 @@ export class Projects{
             const projectName = utils.createDiv(element.name);
             utils.addClass("projectName", projectName);
             projectCard.appendChild(projectName);
-            
+
             const skillSection = utils.createDiv();
             utils.addClass("skillSection", skillSection);
             projectCard.appendChild(skillSection);

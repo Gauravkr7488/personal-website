@@ -20,7 +20,7 @@ export class Data{
             name: "Personal Portfolio Website",
             description: "A responsive website to showcase my skills and projects.",
             link: ["https://myportfolio.com"],
-            skills: [Data.skills.js, Data.skills.cSharp]
+            skills: [Data.skills.js]
         },
 
         GameEngine: {

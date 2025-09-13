@@ -18,6 +18,7 @@ utils.addId("projectContainer", projectContainer);
 utils.addClass("container", projectContainer);
 root.appendChild(projectContainer);
 Projects.addProjects(projectContainer);
+// Projects.filterProjects();
 
 const projectBoxContainer = utils.createDiv();
 utils.addId("projectBox", projectBoxContainer);
