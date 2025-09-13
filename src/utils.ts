@@ -1,5 +1,5 @@
 export class utils {
-    static createDiv(text: string = "something"): HTMLDivElement {
+    static createDiv(text: string = ""): HTMLDivElement {
         const div = document.createElement("div");
         div.textContent = text;
         return div;
