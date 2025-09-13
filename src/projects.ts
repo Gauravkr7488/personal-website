@@ -31,7 +31,17 @@ export class Projects {
 
     static addProjects(projectContainer: HTMLDivElement) {
         this.listProjects(projectContainer);
+        this.addClickingOnSkills()
         // some functionality
+    }
+    static addClickingOnSkills() {
+        const projectCard = document.querySelectorAll(".projectCard");
+        projectCard.forEach((card) => {
+            card.addEventListener("click", () => {
+                projectCard.forEach(c => c.classList.remove("selectedCard"));
+                card.classList.add("selectedCard");
+            });
+        });
     }
 
     private static listProjects(projectContainer: HTMLDivElement) {

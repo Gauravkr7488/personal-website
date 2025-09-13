@@ -51,3 +51,12 @@
 .hide{
   display: none;
 }
+
+.selectedCard {
+  background: #f0f9ff;                   /* noticeable light blue background */
+  border: 2px solid #3b82f6;             /* thicker, stronger accent border */
+  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.25); /* bold highlight shadow */
+  transform: translateY(-6px) scale(1.02); /* bigger lift + slight scale */
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease, background 200ms ease;
+  outline: none;
+}
