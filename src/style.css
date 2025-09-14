@@ -7,15 +7,20 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  user-select: none;
+  /* Prevents text selection */
 }
 
 /* Root wraps everything */
 #root {
   display: flex;
   gap: 2rem;
-  width: 90%;          /* make it stretch nicely */
-  max-width: 1200px;   /* keep it from being too wide */
-  min-height: 600px;   /* give it room even when empty */
+  width: 90%;
+  /* make it stretch nicely */
+  max-width: 1200px;
+  /* keep it from being too wide */
+  min-height: 600px;
+  /* give it room even when empty */
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -24,22 +29,27 @@ body {
 }
 
 .container {
-  flex: 1; /* each takes equal space */
+  flex: 1;
+  /* each takes equal space */
   background: #f0f0f0;
   border-radius: 8px;
   padding: 1.5rem;
   box-sizing: border-box;
-  min-height: 300px;   /* not cramped */
+  min-height: 300px;
+  /* not cramped */
 }
 
 #skillContainer {
-  background: #e3f2fd; /* light blue */
+  background: #e3f2fd;
+  /* light blue */
 }
 
 #projectContainer {
-  background: #fce4ec; /* light pink */
+  background: #fce4ec;
+  /* light pink */
 }
 
 #projectBox {
-  background: #e8f5e9; /* light green */
+  background: #e8f5e9;
+  /* light green */
 }
