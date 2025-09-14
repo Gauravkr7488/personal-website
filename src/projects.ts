@@ -11,10 +11,12 @@ export class Projects {
         projectShown.classList.add("projectShown");
 
         const projectName = utils.createDiv();
+        projectName.classList.add("projectName")
         projectShown.appendChild(projectName);
         const projectDisc = utils.createDiv()
         projectShown.appendChild(projectDisc);
         const projectLinkList = utils.createDiv();
+        projectLinkList.classList.add("linkList");
         projectShown.appendChild(projectLinkList);
         const projectSkillList = utils.createDiv();
         projectShown.appendChild(projectSkillList);
