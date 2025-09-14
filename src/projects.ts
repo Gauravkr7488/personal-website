@@ -2,6 +2,54 @@ import { Data } from "./data";
 import { utils } from "./utils";
 
 export class Projects {
+    static showProject() {
+        const selectedCard = document.querySelector(".selectedCard");
+        const nameInSelectedCard = selectedCard?.querySelector(".projectName")?.textContent;
+        const projectBoxContainer = document.querySelector("#projectBox");
+        (projectBoxContainer as Element).innerHTML = "";
+        const projectShown = utils.createDiv();
+        projectShown.classList.add("projectShown");
+
+        const projectName = utils.createDiv();
+        projectShown.appendChild(projectName);
+        const projectDisc = utils.createDiv()
+        projectShown.appendChild(projectDisc);
+        const projectLinkList = utils.createDiv();
+        projectShown.appendChild(projectLinkList);
+        const projectSkillList = utils.createDiv();
+        projectShown.appendChild(projectSkillList);
+
+
+        this.projects.forEach(project => {
+            if (project.name == nameInSelectedCard) {
+                projectName.textContent = project.name;
+                projectDisc.textContent = project.description;
+
+                project.link.forEach(url => {
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.textContent = url; // or something nicer like "GitHub"
+                    a.target = "_blank"; // open in new tab
+                    a.rel = "noopener noreferrer"; // security best practice
+                    projectLinkList.appendChild(a);
+
+                    // optional: add spacing between multiple links
+                    projectLinkList.appendChild(document.createTextNode(" "));
+                });
+                
+                project.skills.forEach(skill => {
+                    const a = document.createElement("a");
+                    a.textContent = skill;
+                    a.classList.add("skillTag")
+                    projectSkillList.appendChild(a);
+                    projectSkillList.appendChild(document.createTextNode(" "));
+                });
+            }
+        });
+        projectBoxContainer?.appendChild(projectShown);
+
+
+    }
     static filterProjects() {
         let selectedSkillsList: string[] = [];
         const projectCards = document.querySelectorAll(".projectCard");
@@ -22,7 +70,7 @@ export class Projects {
             skillTags.forEach(skillTag => {
                 skillTagsList.push(skillTag.textContent);
             });
-            if(!utils.isArrayASubsetOfB(skillTagsList, selectedSkillsList)) projectCard.classList.add("hide");
+            if (!utils.isArrayASubsetOfB(skillTagsList, selectedSkillsList)) projectCard.classList.add("hide");
             skillTagsList = [];
         });
     }
@@ -34,12 +82,14 @@ export class Projects {
         this.addClickingOnSkills()
         // some functionality
     }
+
     static addClickingOnSkills() {
         const projectCard = document.querySelectorAll(".projectCard");
         projectCard.forEach((card) => {
             card.addEventListener("click", () => {
                 projectCard.forEach(c => c.classList.remove("selectedCard"));
                 card.classList.add("selectedCard");
+                Projects.showProject();
             });
         });
     }
