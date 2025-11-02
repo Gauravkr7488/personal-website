@@ -1,8 +1,18 @@
 /* Reset some defaults */
+
+:root {
+  --dark-background: #1b1e1f;
+  --dark-text: #d6d3cd;
+  --dark-container-one: #202324;
+  --dark-container-two: #181a1b;
+  --dark-buttons: #1e2021;
+  --dark-border: #736b5e;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f9f9f9;
+  background: var(--dark-background);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,8 +39,8 @@ body {
 .container {
   flex: 1;
   /* each takes equal space */
-  background: #edececb3;
-  border: 2px solid #e5e7eb;
+  /* background: #edececb3; */
+  border: 2px solid var(--dark-border);
 
   border-radius: 8px;
   padding: 1.5rem;

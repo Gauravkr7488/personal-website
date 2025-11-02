@@ -1,4 +1,14 @@
 /* Container for all project cards */
+:root {
+  --dark-background: #1b1e1f;
+  --dark-text: #d6d3cd;
+  --dark-container-one: #202324;
+  --dark-container-two: #181a1b;
+  --dark-buttons: #1e2021;
+  --dark-border: #736b5e;
+}
+
+
 #projectContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -9,8 +19,8 @@
 
 /* Project card */
 .projectCard {
-  background: #fff;
-  border: 1px solid #e5e7eb;
+  background: var(--dark-container-two);
+  border: 1px solid var(--dark-border);
   height: 70px;
   /* subtle border */
   border-radius: 10px;
@@ -31,7 +41,7 @@
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #111827;
+  color: var(--dark-text);
   text-align: center;
 }
 
@@ -45,14 +55,16 @@
 
 /* Skill tag */
 .skillTag {
-  background-color: #f9fafb;
-  color: #374151;
+  /* background-color: #f9fafb; */
+  color: var(--dark-buttons);
   font-size: 0.8rem;
   padding: 0.3rem 0.7rem;
   border-radius: 999px;
   /* pill */
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--dark-border);
   transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
+  color: var(--dark-text);
+
 }
 
 .hide {

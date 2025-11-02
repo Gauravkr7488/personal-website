@@ -1,8 +1,17 @@
+:root {
+  --dark-background: #1b1e1f;
+  --dark-text: #d6d3cd;
+  --dark-container-one: #202324;
+  --dark-container-two: #181a1b;
+  --dark-buttons: #1e2021;
+  --dark-border: #736b5e;
+}
 .projectShown {
-    background: #fff;
-    border: 1px solid #e5e7eb;
+    /* background: #fff; */
+    border: 1px solid var(--dark-border);
     border-radius: 10px;
     padding: 1.5rem;
+    color:  var(--dark-text);
 }
 
 .projectShown>* {
