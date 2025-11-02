@@ -12,15 +12,17 @@ utils.addClass("container", skillContainer);
 root.appendChild(skillContainer);
 Skills.addSkils(skillContainer);
 
-
 const projectContainer = utils.createDiv();
 utils.addId("projectContainer", projectContainer);
 utils.addClass("container", projectContainer);
 root.appendChild(projectContainer);
 Projects.addProjects(projectContainer);
-// Projects.filterProjects();
 
 const projectBoxContainer = utils.createDiv();
 utils.addId("projectBox", projectBoxContainer);
 utils.addClass("container", projectBoxContainer);
 root.appendChild(projectBoxContainer);
+
+const textBox = utils.createDiv("Select a Project to view more");
+utils.addClass("textBox", textBox); // in style.css
+projectBoxContainer.appendChild(textBox)

@@ -49,3 +49,11 @@ body {
   /* not cramped */
 }
 
+
+.textBox {
+  color: var(--dark-text);
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  height: 50vh;            
+}
